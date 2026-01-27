@@ -1,8 +1,11 @@
 import styles from './Post.module.css'
 
-const Post = (props: { author: string; body: string }) => {
-  const { author, body } = props
+interface PostProps {
+  author: string
+  body: string
+}
 
+const Post = ({ author, body }: PostProps) => {
   return (
     <li className={styles.post}>
       <p className={styles.author}>{author}</p>
