@@ -1,5 +1,4 @@
-import './App.css'
-import Post from './components/Post.tsx'
+import PostsList from './components/PostsList.tsx'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -29,15 +28,10 @@ function App() {
   //   </>
   // )
 
-  const names = ['Dmytrii', 'Lysak']
-
-  const pickName = () => (Math.random() > 0.5 ? names[0] : names[1])
-
   return (
-    <>
-      <Post author={() => pickName()} body="1" />
-      <Post author={() => pickName()} body="2" />
-    </>
+    <main>
+      <PostsList />
+    </main>
   )
 }
 
