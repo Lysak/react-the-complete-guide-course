@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Modal from './Modal.tsx'
 import NewPost from './NewPost.tsx'
 import Post from './Post.tsx'
@@ -8,20 +9,40 @@ interface PostsListProps {
   onStopPosting: () => void
 }
 
+interface PostData {
+  id: string
+  author: string
+  body: string
+}
+
 const PostsList = ({ isPosting, onStopPosting }: PostsListProps) => {
-  const names = ['Dmytrii', 'Lysak']
-  const pickName = () => (Math.random() > 0.5 ? names[0] : names[1])
+  const [posts, setPosts] = useState<PostData[]>([])
+
+  function addPostHandler(postData: { author: string; body: string }) {
+    const newPost = { ...postData, id: crypto.randomUUID() }
+    setPosts((existingPost) => [newPost, ...existingPost])
+  }
 
   return (
     <>
       {isPosting && (
         <Modal onClose={onStopPosting}>
-          <NewPost onCancel={onStopPosting} />
+          <NewPost onCancel={onStopPosting} onAddPost={addPostHandler} />
         </Modal>
       )}
-      <ul className={styles.posts}>
-        <Post author={pickName()} body="2" />
-      </ul>
+      {posts.length > 0 && (
+        <ul className={styles.posts}>
+          {posts.map((post) => (
+            <Post key={post.id} author={post.author} body={post.body} />
+          ))}
+        </ul>
+      )}
+      {posts.length === 0 && (
+        <div style={{ textAlign: 'center', color: 'white' }}>
+          <h2>There are mo posts yet.</h2>
+          <p>Start adding some!</p>
+        </div>
+      )}
     </>
   )
 }

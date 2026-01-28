@@ -3,9 +3,10 @@ import styles from './NewPost.module.css'
 
 interface NewPostProps {
   onCancel: () => void
+  onAddPost: (post: { author: string; body: string }) => void
 }
 
-function NewPost({ onCancel }: NewPostProps) {
+function NewPost({ onCancel, onAddPost }: NewPostProps) {
   const [enteredBody, setEnteredBody] = useState('')
   const [enteredAuthor, setEnteredAuthor] = useState('')
 
@@ -22,7 +23,7 @@ function NewPost({ onCancel }: NewPostProps) {
       body: enteredBody,
       author: enteredAuthor,
     }
-    console.log(postData, 'lysak postData')
+    onAddPost(postData)
     onCancel() // Close modal after submit
   }
 
