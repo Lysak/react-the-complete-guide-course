@@ -23,8 +23,3 @@ sudo rm -R ./yarn-error.log
 sudo rm -R ./.pnpm-store
 corepack use pnpm@latest-10
 ```
-
-## Issues
-
-1. biome optimize import working but removed space {PropsWithChildren}
-import type { MouseEventHandler, PropsWithChildren } from 'react'

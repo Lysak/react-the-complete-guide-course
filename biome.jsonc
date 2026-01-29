@@ -1,8 +1,17 @@
 {
   "$schema": "https://biomejs.dev/schemas/2.3.13/schema.json",
-  "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
-  "files": { "ignoreUnknown": false },
-  "formatter": { "enabled": true, "indentStyle": "space" },
+  "vcs": {
+    "enabled": true,
+    "clientKind": "git",
+    "useIgnoreFile": true
+  },
+  "files": {
+    "ignoreUnknown": false
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
   "linter": {
     "enabled": true,
     "rules": {
@@ -96,7 +105,12 @@
         }
       }
     },
-    { "includes": ["**/*.{ts,tsx}"], "javascript": { "globals": [] } },
+    {
+      "includes": ["**/*.{ts,tsx}"],
+      "javascript": {
+        "globals": []
+      }
+    },
     {
       "includes": [
         "**/*.{ts,tsx}",
@@ -110,7 +124,9 @@
       ],
       "linter": {
         "rules": {
-          "complexity": { "noArguments": "error" },
+          "complexity": {
+            "noArguments": "error"
+          },
           "correctness": {
             "noConstAssign": "off",
             "noGlobalObjectCalls": "off",
@@ -121,7 +137,9 @@
             "noUnreachable": "off",
             "noUnreachableSuper": "off"
           },
-          "style": { "useConst": "error" },
+          "style": {
+            "useConst": "error"
+          },
           "suspicious": {
             "noClassAssign": "off",
             "noDuplicateClassMembers": "off",
@@ -142,8 +160,12 @@
       "includes": ["**/*.{ts,tsx}"],
       "linter": {
         "rules": {
-          "complexity": { "noUselessTypeConstraint": "error" },
-          "correctness": { "noUnusedVariables": "error" },
+          "complexity": {
+            "noUselessTypeConstraint": "error"
+          },
+          "correctness": {
+            "noUnusedVariables": "error"
+          },
           "style": {
             "noCommonJs": "error",
             "noNamespace": "error",
@@ -172,7 +194,12 @@
         }
       }
     },
-    { "includes": ["**/*.{ts,tsx}"], "linter": { "rules": {} } },
+    {
+      "includes": ["**/*.{ts,tsx}"],
+      "linter": {
+        "rules": {}
+      }
+    },
     {
       "includes": ["**/*.{ts,tsx}"],
       "javascript": {

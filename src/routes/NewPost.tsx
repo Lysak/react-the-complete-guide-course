@@ -36,7 +36,7 @@ export default NewPost
 
 export async function action({ request }: { request: Request }) {
   const formData = await request.formData()
-  const postData = Object.fromEntries(formData) as unknown as PostData // { body: '...', author: '...' }
+  const postData = Object.fromEntries(formData) as unknown as PostData
 
   await fetch('http://localhost:8080/posts', {
     method: 'POST',
