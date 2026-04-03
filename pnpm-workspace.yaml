@@ -1,5 +1,6 @@
 packages:
   - 'dummy-backend'
+  - 'projects/03 React Essentials'
 
 onlyBuiltDependencies:
   - '@swc/core'

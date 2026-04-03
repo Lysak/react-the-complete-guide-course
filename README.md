@@ -23,3 +23,8 @@ sudo rm -R ./yarn-error.log
 sudo rm -R ./.pnpm-store
 corepack use pnpm@latest-10
 ```
+
+```
+pnpm --dir "/Users/Files/www/pet/react-the-complete-guide-course" lint -- "projects/03 React Essentials"
+pnpm --dir "/Users/Files/www/pet/react-the-complete-guide-course" format -- "projects/03 React Essentials"
+```
